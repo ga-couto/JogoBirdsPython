@@ -106,7 +106,8 @@ class Passaro(Ator):
         o status dos Passaro deve ser alterado para destruido, bem como o seu caracter
 
         """
-        pass
+        if self.y<=0:
+            self.status = DESTRUIDO
 
     def calcular_posicao(self, tempo):
         """
@@ -122,7 +123,7 @@ class Passaro(Ator):
         :param tempo: tempo de jogo a ser calculada a posição
         :return: posição x, y
         """
-        if self.foi_lancado():
+        if self._esta_voando():
             delta_t=tempo - self._tempo_de_lancamento
             self.calcular_posicao_vertical(delta_t)
             self.calcular_posicao_horizontal(delta_t)
@@ -138,21 +139,24 @@ class Passaro(Ator):
         :param tempo_de_lancamento:
         :return:
         """
-        self._angulo_de_lancamento = angulo
+        self._angulo_de_lancamento = math.radians(angulo)
         self._tempo_de_lancamento = tempo_de_lancamento
 
     def calcular_posicao_vertical(self, delta_t):
         y_atual= self._y_inicial
-        angulo_radiano = math.radians(self._angulo_de_lancamento)
+        angulo_radiano = self._angulo_de_lancamento
         y_atual += self.velocidade_escalar*delta_t*math.sin(angulo_radiano)
         y_atual -= (GRAVIDADE*delta_t**2)/2
         self.y = y_atual
 
     def calcular_posicao_horizontal(self, delta_t):
         x_atual = self._x_inicial
-        angulo_radiano = math.radians(self._angulo_de_lancamento)
+        angulo_radiano = self._angulo_de_lancamento
         x_atual += self.velocidade_escalar * delta_t * math.cos(angulo_radiano)
         self.x = x_atual
+
+    def _esta_voando(self):
+        return self.foi_lancado() and self.status==ATIVO
 
 
 class PassaroAmarelo(Passaro):
