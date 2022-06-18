@@ -47,7 +47,7 @@ def animar(tela, camada_de_atores, fase, passo=0.01, delta_t=0.04):
     tempo = 0
     passo = int(1000 * passo)
     angulo = 0
-    multiplicador_rebobinar = 20
+    multiplicador_rebobinar = 10
 
     def _animar():
         tempo_de_inicio_de_animacao=time.time()
@@ -70,7 +70,7 @@ def animar(tela, camada_de_atores, fase, passo=0.01, delta_t=0.04):
         else:
             camada_de_atores.delete(ALL)
             camada_de_atores.create_image((0, 0), image=BACKGROUND, anchor=NW)
-            tamanho_seta = 60
+            tamanho_seta = 70
             angulo_rad = math.radians(-angulo)
 
             camada_de_atores.create_line(52, 493, 52 + tamanho_seta * math.cos(angulo_rad),
