@@ -18,27 +18,27 @@ if __name__ == '__main__':
 
     #Adicionar Porcos VERTICAL
     for i in range(70, 430,40):
-        fase.adicionar_porco(Porco(80,i))
+        fase.adicionar_obstaculo(Obstaculo(80,i))
         fase.adicionar_obstaculo(Obstaculo(220,i))
         fase.adicionar_obstaculo(Obstaculo(290,i))
-        fase.adicionar_porco(Porco(363,i))
-        fase.adicionar_porco(Porco(437,i))
-        fase.adicionar_obstaculo(Obstaculo(535,i))
-        fase.adicionar_porco(Porco(623,i))
-        fase.adicionar_porco(Porco(697,i))
+        fase.adicionar_obstaculo(Obstaculo(363,i))
+        fase.adicionar_obstaculo(Obstaculo(437,i))
+        fase.adicionar_porco(Porco(535,i))
+        fase.adicionar_obstaculo(Obstaculo(623,i))
+        fase.adicionar_obstaculo(Obstaculo(697,i))
     # Adicionar Porcos HORIZONTAL
     for i in range(115,151,35):
-        fase.adicionar_porco(Porco(i,57))
-        fase.adicionar_porco(Porco(i, 399))
+        fase.adicionar_obstaculo(Obstaculo(i,57))
+        fase.adicionar_obstaculo(Obstaculo(i, 399))
     for i in range(255,300,50):
         fase.adicionar_obstaculo(Obstaculo(i,55))
         fase.adicionar_obstaculo(Obstaculo(i, 399))
     for i in range(400,420,50):
-        fase.adicionar_porco(Porco(i,55))
+        fase.adicionar_obstaculo(Obstaculo(i,55))
     for i in range(498,600,74):
         fase.adicionar_obstaculo(Obstaculo(i, 390))
     for i in range(660,700,50):
-        fase.adicionar_porco(Porco(i,55))
-        fase.adicionar_porco(Porco(i, 399))
+        fase.adicionar_obstaculo(Obstaculo(i,55))
+        fase.adicionar_obstaculo(Obstaculo(i, 399))
 
     rodar_fase(fase)
