@@ -17,7 +17,7 @@ if __name__ == '__main__':
     deltax_gambi=80
     # Adicionar Pássaros Amarelos
     for i in range(100):
-        fase.adicionar_passaro(PassaroAmarelo(30, 30))
+        fase.adicionar_passaro(PassaroAmarelo(30,30))
 
     # linhas verticais
     for i in range(30, 300, 32):
@@ -34,7 +34,7 @@ if __name__ == '__main__':
     meio = 160
     n = 9
     delta_x = 28
-    delta_y = 12
+    delta_y = 10
     for i in range(1, n):
         fase.adicionar_porco(Porco(x0 + delta_x * i, meio + delta_y * i))
         fase.adicionar_porco(Porco(x0 + delta_x * i, meio - delta_y * i))
